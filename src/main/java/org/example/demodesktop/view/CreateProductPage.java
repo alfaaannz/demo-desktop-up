@@ -10,10 +10,10 @@ import java.io.IOException;
 
 import static org.example.demodesktop.utils.UIUtils.show;
 
-public class RegisterPage {
+public class CreateProductPage {
 
     public void start(Stage primaryStage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("register-page.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("create-product-page.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
         show(primaryStage, scene);

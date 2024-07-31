@@ -2,6 +2,7 @@ package org.example.demodesktop.utils;
 
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
@@ -20,5 +21,14 @@ public class UIUtils {
 
         primaryStage.setMaximized(true);
         primaryStage.show();
+    }
+
+    // show alert
+    public static void showAlert(Alert.AlertType alertType, String title, String message) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.show();
     }
 }
