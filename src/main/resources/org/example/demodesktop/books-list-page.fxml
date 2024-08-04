@@ -26,7 +26,7 @@
                 </font>
             </Button>
             <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS"/>
-            <Button fx:id="logoutButton" onAction="#handleLogout" mnemonicParsing="false" style="-fx-background-color: red;" text="Logout">
+            <Button fx:id="logoutButton" onAction="#handleLogout" alignment="TOP_RIGHT" mnemonicParsing="false" style="-fx-background-color: red;" text="Logout">
                 <font>
                     <Font size="14.0"/>
                 </font>

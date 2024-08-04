@@ -12,7 +12,7 @@ import static org.example.demodesktop.utils.UIUtils.show;
 public class CreateBooksPage {
 
     public void start(Stage primaryStage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("create-product-page.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("create-books-page.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
         show(primaryStage, scene);

@@ -19,7 +19,7 @@ public class BooksDetailPage {
     }
 
     public void start(Stage primaryStage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("product-detail-page.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("books-detail-page.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
         BooksDetailController booksDetailController = fxmlLoader.getController();

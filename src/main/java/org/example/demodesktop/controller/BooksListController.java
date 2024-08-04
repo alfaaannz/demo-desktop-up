@@ -46,21 +46,22 @@ public class BooksListController {
 
     @FXML
     public void initialize() throws IOException {
+        // Set items for TableView
         booksTableView.setItems(getBooks());
 
+        // Set cell value factories for TableColumns
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
         authorColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
         publisherColumn.setCellValueFactory(new PropertyValueFactory<>("publisher"));
         isbnColumn.setCellValueFactory(new PropertyValueFactory<>("isbn"));
-
-
         createdAtColumn.setCellValueFactory(new PropertyValueFactory<>("createdAt"));
         updatedAtColumn.setCellValueFactory(new PropertyValueFactory<>("updatedAt"));
 
-        booksTableView.setRowFactory( tv -> {
+        // Set row factory for TableView to handle row clicks
+        booksTableView.setRowFactory(tv -> {
             TableRow<Books> row = new TableRow<>();
             row.setOnMouseClicked(event -> {
-                if (!row.isEmpty() && event.getButton() == MouseButton.PRIMARY ) {
+                if (!row.isEmpty() && event.getButton() == MouseButton.PRIMARY) {
                     Books clickedBooks = row.getItem();
                     log.info("Books clicked: " + clickedBooks);
                     showBooksDetailPage((Stage) booksTableView.getScene().getWindow(), clickedBooks);
@@ -84,7 +85,6 @@ public class BooksListController {
         log.info("Navigated to login page");
     }
 
-
     private ObservableList<Books> getBooks() {
         List<Books> books = booksRepository.findAll();
         return FXCollections.observableList(books);
@@ -98,5 +98,4 @@ public class BooksListController {
             log.warning("Error while showing books detail page");
         }
     }
-
 }
