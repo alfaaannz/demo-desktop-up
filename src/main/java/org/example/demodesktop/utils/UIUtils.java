@@ -16,7 +16,7 @@ public class UIUtils {
         primaryStage.setY(screenBounds.getMinY());
         primaryStage.setWidth(screenBounds.getWidth());
         primaryStage.setHeight(screenBounds.getHeight());
-        primaryStage.setTitle("Product Management");
+        primaryStage.setTitle("Digital Library");
         primaryStage.setScene(scene);
 
         primaryStage.setMaximized(true);

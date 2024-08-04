@@ -9,11 +9,13 @@ import javafx.stage.Stage;
 import org.example.demodesktop.config.SessionManager;
 import org.example.demodesktop.model.User;
 import org.example.demodesktop.repository.UserRepository;
-import org.example.demodesktop.view.ProductListPage;
+import org.example.demodesktop.view.BooksListPage;
 import org.example.demodesktop.view.RegisterPage;
 import org.mindrot.jbcrypt.BCrypt;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import static org.example.demodesktop.utils.UIUtils.showAlert;
@@ -42,7 +44,7 @@ public class LoginController {
             String username = usernameField.getText();
             String password = passwordField.getText();
             // validate all fields
-            if (username.isEmpty() && password.isEmpty()) {
+            if (username.isEmpty() || password.isEmpty()) {
                 showAlert(Alert.AlertType.ERROR, "Bad Request", "Username and password cannot be empty");
                 return;
             }
@@ -54,15 +56,15 @@ public class LoginController {
             // if username exist save session & go to product-list-page
             if (isVerified(username, password)) {
                 SessionManager.setLoggedIn(true);
-                new ProductListPage().start((Stage) loginButton.getScene().getWindow());
+                new BooksListPage().start((Stage) loginButton.getScene().getWindow());
                 showAlert(Alert.AlertType.CONFIRMATION, "Login successfully", "Hi " + username);
             } else {
                 // else -> show alert error
                 showAlert(Alert.AlertType.ERROR, "Login failed", "username & password does not match");
             }
         } catch (Exception exception) {
-            // print log on console
-            log.info("Error occurred: " + exception);
+            // log general exceptions
+            log.log(Level.SEVERE, "Error occurred", exception);
             showAlert(Alert.AlertType.ERROR, "Internal server error", "Please contact the administrator");
         }
     }
@@ -82,6 +84,4 @@ public class LoginController {
         // go to register page
         new RegisterPage().start((Stage) registerButton.getScene().getWindow());
     }
-
-
 }

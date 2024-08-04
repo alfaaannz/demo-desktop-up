@@ -12,7 +12,7 @@
 <?import javafx.scene.image.Image?>
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.example.demodesktop.controller.ProductDetailController"
+            fx:controller="org.example.demodesktop.controller.BooksDetailController"
             prefHeight="400.0" prefWidth="600.0">
     <top>
         <HBox style="-fx-background-color: white" alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="600.0" spacing="10.0" BorderPane.alignment="CENTER">
@@ -29,26 +29,29 @@
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="80.0" BorderPane.alignment="CENTER">
             <VBox alignment="CENTER" spacing="10.0">
                 <ImageView fitHeight="150" fitWidth="150">
-                    <Image url="@../../../logo_product.png"/>
+                    <Image url="@../../../perpus-logo.png"/>
                 </ImageView>
-                <Text style="-fx-font-weight: BOLD" text="Product Management">
+                <Text style="-fx-font-weight: BOLD" text="Digital Library">
                     <font>
                         <Font name="Arial Bold" size="16.0"/>
                     </font>
                 </Text>
             </VBox>
             <VBox alignment="CENTER_LEFT" prefHeight="400.0" prefWidth="180.0" spacing="10.0">
-                <Label fx:id="productCodeLabel" prefWidth="225.0" text="Product code: "/>
-                <Label fx:id="productNameLabel" prefWidth="225.0" text="Product name: "/>
-                <Label fx:id="priceLabel" prefWidth="225.0" text="Price:  "/>
-                <Label fx:id="descriptionLabel" prefWidth="225.0" text="Description: "/>
+                <Label fx:id="booksTitle" prefWidth="225.0" text="Title: "/>
+                <Label fx:id="booksAuthor" prefWidth="225.0" text="Author name: "/>
+                <Label fx:id="booksPublisher" prefWidth="225.0" text="Publisher:  "/>
+                <Label fx:id="booksYear" prefWidth="225.0" text="Year: "/>
+                <Label fx:id="booksIsbn" prefWidth="225.0" text="Isbn: "/>
+                <Label fx:id="booksPages" prefWidth="225.0" text="Pages: "/>
+                <Label fx:id="booksGenre" prefWidth="225.0" text="Genre: "/>
                 <Label  fx:id="createdAtLabel" prefWidth="225.0" text="Created at: "/>
                 <Label fx:id="updatedAtLabel" prefWidth="225.0" text="Updated at: "/>
 
-                <Button fx:id="editProductButton" maxWidth="225.0" mnemonicParsing="false" onAction="#handleEdit"
+                <Button fx:id="editBooksButton" maxWidth="225.0" mnemonicParsing="false" onAction="#handleEdit"
                         prefHeight="25.0" prefWidth="225.0" style="-fx-background-color: green; -fx-text-fill: white;"
                         text="Edit"/>
-                <Button fx:id="deleteProductButton" maxWidth="225.0" mnemonicParsing="false" onAction="#handleDelete"
+                <Button fx:id="deleteBooksButton" maxWidth="225.0" mnemonicParsing="false" onAction="#handleDelete"
                         prefHeight="25.0" prefWidth="225.0" style="-fx-background-color: red; -fx-text-fill: black;"
                         text="Delete"/>
             </VBox>

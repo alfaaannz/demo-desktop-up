@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demodesktop.controller.CreateProductController">
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demodesktop.controller.CreateBooksController">
     <top>
         <HBox style="-fx-background-color: white" alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="600.0" spacing="10.0" BorderPane.alignment="CENTER">
             <Button onAction="#handleBack" style="-fx-background-color: transparent; -fx-padding: 5;">
@@ -27,20 +27,23 @@
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="80.0" BorderPane.alignment="CENTER">
             <VBox alignment="CENTER" spacing="10.0">
                 <ImageView fitHeight="150" fitWidth="150">
-                    <Image url="@../../../logo_product.png" />
+                    <Image url="@../../../perpus-logo.png" />
                 </ImageView>
-                <Text style="-fx-font-weight: BOLD" text="Product Management">
+                <Text style="-fx-font-weight: BOLD" text="Digital Library">
                     <font>
                         <Font name="Arial Bold" size="16.0" />
                     </font>
                 </Text>
             </VBox>
             <VBox alignment="CENTER" prefHeight="400.0" prefWidth="180.0" spacing="10.0">
-                <TextField fx:id="productCode" promptText="Product code" />
-                <TextField fx:id="productName" promptText="Product name" />
-                <TextField fx:id="price" promptText="Price" />
-                <TextField fx:id="description" promptText="Description" />
-                <Button fx:id="createProductButton" maxWidth="225.0" mnemonicParsing="false" onAction="#handleCreateProduct" prefHeight="25.0" prefWidth="225.0" style="-fx-background-color: green; -fx-text-fill: white;" text="Create Product" />
+                <TextField fx:id="booksTitle" promptText="Title" />
+                <TextField fx:id="booksAuthor" promptText="Author" />
+                <TextField fx:id="booksPublisher" promptText="Publisher" />
+                <TextField fx:id="booksYear" promptText="Year" />
+                <TextField fx:id="booksIsbn" promptText="Isbn" />
+                <TextField fx:id="booksPages" promptText="Pages" />
+                <TextField fx:id="booksGenre" promptText="Genre" />
+                <Button fx:id="createBooksButton" maxWidth="225.0" mnemonicParsing="false" onAction="#handleCreateBooks" prefHeight="25.0" prefWidth="225.0" style="-fx-background-color: green; -fx-text-fill: white;" text="Add Books" />
             </VBox>
         </HBox>
     </center>

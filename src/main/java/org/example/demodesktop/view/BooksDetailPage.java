@@ -4,26 +4,26 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.example.demodesktop.App;
-import org.example.demodesktop.controller.ProductDetailController;
-import org.example.demodesktop.model.Product;
+import org.example.demodesktop.controller.BooksDetailController;
+import org.example.demodesktop.model.Books;
 
 import java.io.IOException;
 
 import static org.example.demodesktop.utils.UIUtils.show;
 
-public class ProductDetailPage {
-    private final Product product;
+public class BooksDetailPage {
+    private final Books books;
 
-    public ProductDetailPage(Product product) {
-        this.product = product;
+    public BooksDetailPage(Books books) {
+        this.books = books;
     }
 
     public void start(Stage primaryStage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("product-detail-page.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
-        ProductDetailController productDetailController = fxmlLoader.getController();
-        productDetailController.initData(product);
+        BooksDetailController booksDetailController = fxmlLoader.getController();
+        booksDetailController.initData(books);
 
         show(primaryStage, scene);
     }

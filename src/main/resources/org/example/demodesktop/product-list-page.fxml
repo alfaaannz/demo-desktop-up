@@ -13,11 +13,11 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TableColumn?>
 <BorderPane style="-fx-background-color: white" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="org.example.demodesktop.controller.ProductListController">
+            fx:controller="org.example.demodesktop.controller.BooksListController">
     <top>
         <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="600.0">
-            <Button fx:id="createProductButton" onAction="#handleCreateProduct" alignment="TOP_CENTER" mnemonicParsing="false"
-                    style="-fx-background-color: green; -fx-text-fill: white;" text="Create Product">
+            <Button fx:id="createBooksButton" onAction="#handleCreateBooks" alignment="TOP_CENTER" mnemonicParsing="false"
+                    style="-fx-background-color: green; -fx-text-fill: white;" text="Add Books">
                 <HBox.margin>
                     <Insets left="5.0" top="5.0"/>
                 </HBox.margin>
@@ -37,12 +37,12 @@
         </HBox>
     </top>
     <center>
-        <TableView fx:id="productTableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <TableView fx:id="booksTableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <columns>
-                <TableColumn fx:id="productCodeColumn" text="Product Code"/>
-                <TableColumn fx:id="nameColumn" text="Product Name"/>
-                <TableColumn fx:id="priceColumn" text="Price"/>
-                <TableColumn fx:id="descriptionColumn" text="Description"/>
+                <TableColumn fx:id="titleColumn" text="Title"/>
+                <TableColumn fx:id="authorColumn" text="Author"/>
+                <TableColumn fx:id="publisherColumn" text="Publisher"/>
+                <TableColumn fx:id="isbnColumn" text="Isbn"/>
                 <TableColumn fx:id="createdAtColumn" text="Created At"/>
                 <TableColumn fx:id="updatedAtColumn" text="Updated At"/>
             </columns>
